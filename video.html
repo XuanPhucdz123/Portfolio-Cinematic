@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>My Video Content - CINEMATIC</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600&family=Inter:wght@600&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary-fixed": "#7df4ff",
+                      "on-primary-fixed": "#002022",
+                      "background": "#121414",
+                      "surface-container-lowest": "#0c0f0f",
+                      "primary-container": "#00f0ff",
+                      "on-surface": "#e2e2e2",
+                      "on-surface-variant": "#b9cacb"
+              },
+              "fontFamily": {
+                      "display-xl": ["Space Grotesk"],
+                      "label-caps": ["Inter"],
+                      "body-lg": ["Manrope"],
+                      "headline-md": ["Space Grotesk"]
+              }
+            }
+          }
+        }
+    </script>
+    <style>
+        body { background-color: #050505; }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(24px);
+        }
+    </style>
+</head>
+<body class="text-on-background min-h-screen flex flex-col pt-[88px] selection:bg-primary-container selection:text-on-primary-fixed">
+
+<header class="fixed top-0 left-0 w-full flex items-center justify-between px-8 py-5 bg-black/20 backdrop-blur-2xl z-50 border-b border-white/5 shadow-[0_8px_32px_0_rgba(0,0,0,0.8)]">
+    <div class="flex items-center gap-4">
+        <a href="index.html" class="flex items-center gap-2 hover:text-[#00F0FF] hover:bg-white/5 transition-all duration-300 p-2 rounded-full text-zinc-500">
+            <span class="material-symbols-outlined text-xl">arrow_back</span>
+            <span class="font-label-caps text-[12px] tracking-[0.15em] font-semibold uppercase hidden sm:block">Back</span>
+        </a>
+        <span class="text-xl font-bold tracking-tighter text-white">CINEMATIC</span>
+    </div>
+    <div class="hidden md:flex gap-8">
+        <a class="font-['Space_Grotesk'] tracking-widest uppercase text-xs text-[#00F0FF] font-bold relative before:content-[''] before:absolute before:-bottom-2 before:left-0 before:w-full before:h-0.5 before:bg-[#00F0FF] before:shadow-[0_0_10px_#00F0FF]" href="#">Gallery</a>
+    </div>
+    <div class="flex items-center gap-4 text-zinc-500">
+        <button class="hover:text-[#00F0FF] hover:bg-white/5 transition-all duration-300 p-2 rounded-full"><span class="material-symbols-outlined text-xl">share</span></button>
+        <button class="hover:text-[#00F0FF] hover:bg-white/5 transition-all duration-300 p-2 rounded-full"><span class="material-symbols-outlined text-xl">more_vert</span></button>
+    </div>
+</header>
+
+<main class="flex-grow max-w-[1200px] mx-auto px-8 w-full pb-[160px]">
+    <section class="mt-[160px] mb-[64px]">
+        <h1 class="font-display-xl text-[80px] font-bold leading-[1.1] tracking-[-0.04em] text-white drop-shadow-[0_0_15px_rgba(0,240,255,0.3)]">My Video Content</h1>
+        <p class="font-body-lg text-[18px] text-on-surface-variant mt-2 max-w-2xl">A curated collection of visual experiences, captured and presented in high fidelity.</p>
+    </section>
+
+    <section class="grid grid-cols-1 lg:grid-cols-3 gap-8 mx-auto">
+        
+        <div class="glass-card rounded-xl p-4 transition-transform duration-500 hover:-translate-y-2 hover:shadow-[0_10px_40px_rgba(0,240,255,0.1)] group">
+            <div class="relative aspect-video w-full mb-4 group">
+                <img aria-hidden="true" class="absolute inset-0 w-full h-full object-cover rounded-xl blur-2xl opacity-60 scale-105 transition-all duration-500 group-hover:opacity-100 group-hover:scale-110 group-hover:blur-3xl" src="maxresdefault (1).jpg"/>
+                
+                <a class="block relative z-10 w-full h-full rounded-xl overflow-hidden border border-white/10 transition-transform duration-500 bg-surface-container-lowest" href="https://www.youtube.com/watch?v=s1K0_eilVBc" target="_blank">
+                    <img alt="Forza Horizon 5" class="w-full h-full object-cover" src="maxresdefault (1).jpg"/>
+                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-300 flex items-center justify-center">
+                        <div class="bg-white/20 backdrop-blur-md rounded-full w-14 h-14 flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
+                            <span class="material-symbols-outlined text-white text-3xl">play_arrow</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="mt-4 px-2">
+                <h2 class="font-headline-md text-[20px] font-medium leading-snug text-white group-hover:text-[#00f0ff] transition-colors duration-300">Forza Horizon 5</h2>
+            </div>
+        </div>
+
+        <div class="glass-card rounded-xl p-4 transition-transform duration-500 hover:-translate-y-2 hover:shadow-[0_10px_40px_rgba(0,240,255,0.1)] group">
+            <div class="relative aspect-video w-full mb-4 group">
+                <img aria-hidden="true" class="absolute inset-0 w-full h-full object-cover rounded-xl blur-2xl opacity-60 scale-105 transition-all duration-500 group-hover:opacity-100 group-hover:scale-110 group-hover:blur-3xl" src="dadang.jpg"/>
+                
+                <a class="block relative z-10 w-full h-full rounded-xl overflow-hidden border border-white/10 transition-transform duration-500 bg-surface-container-lowest" href="https://www.youtube.com/watch?v=Sg5L6RyuaVU" target="_blank">
+                    <img alt="Đa Dạng Sinh Học Ở Việt Nam | Nguyễn Xuân Phúc" class="w-full h-full object-cover" src="dadang.jpg"/>
+                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-300 flex items-center justify-center">
+                        <div class="bg-white/20 backdrop-blur-md rounded-full w-14 h-14 flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
+                            <span class="material-symbols-outlined text-white text-3xl">play_arrow</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="mt-4 px-2">
+                <h2 class="font-headline-md text-[20px] font-medium leading-snug text-white group-hover:text-[#00f0ff] transition-colors duration-300">Đa Dạng Sinh Học Ở Việt Nam | Nguyễn Xuân Phúc</h2>
+            </div>
+        </div>
+
+        <div class="glass-card rounded-xl p-4 transition-transform duration-500 hover:-translate-y-2 hover:shadow-[0_10px_40px_rgba(0,240,255,0.1)] group">
+            <div class="relative aspect-video w-full mb-4 group">
+                <img aria-hidden="true" class="absolute inset-0 w-full h-full object-cover rounded-xl blur-2xl opacity-60 scale-105 transition-all duration-500 group-hover:opacity-100 group-hover:scale-110 group-hover:blur-3xl" src="20-11-la-ngay-gi-thumb.jpg"/>
+                
+                <a class="block relative z-10 w-full h-full rounded-xl overflow-hidden border border-white/10 transition-transform duration-500 bg-surface-container-lowest" href="https://www.youtube.com/watch?v=8q6TEJ1fDCA" target="_blank">
+                    <img alt="Video Tri Ân Thầy Cô 20 Tháng 11 8A1 2025 2026 Nguyễn Tú" class="w-full h-full object-cover" src="20-11-la-ngay-gi-thumb.jpg"/>
+                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-300 flex items-center justify-center">
+                        <div class="bg-white/20 backdrop-blur-md rounded-full w-14 h-14 flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
+                            <span class="material-symbols-outlined text-white text-3xl">play_arrow</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="mt-4 px-2">
+                <h2 class="font-headline-md text-[20px] font-medium leading-snug text-white group-hover:text-[#00f0ff] transition-colors duration-300">Video Tri Ân Thầy Cô 20 Tháng 11 8A1 2025 2026 Nguyễn Tú</h2>
+            </div>
+        </div>
+
+    </section>
+</main>
+</body>
+</html>
