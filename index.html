@@ -1,23 +1,21 @@
 <!DOCTYPE html>
-<html class="dark" lang="en" style="">
+<html class="dark" lang="en">
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    
-    <link rel="icon" type="image/png" href="favicon.png">
-    
-    <title>High-End Personal Introduction</title>
+    <title>Xuân Phúc — Personal Introduction</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com" rel="preconnect"/>
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&family=Manrope:wght@400&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet"/>
+
     <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
             theme: {
                 extend: {
-                    "colors": {
+                    colors: {
                         "primary-container": "#00f0ff",
                         "on-primary-fixed": "#002022",
                         "surface": "#121414",
@@ -26,262 +24,1071 @@
                         "surface-container-highest": "#333535",
                         "secondary": "#ebb2ff",
                         "secondary-container": "#b600f8"
-                    },
-                    "borderRadius": {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "full": "9999px"
-                    },
-                    "spacing": {
-                        "section-gap": "160px",
-                        "container-max": "1200px",
-                        "gutter": "32px"
-                    },
-                    "fontFamily": {
-                        "headline-md": ["Space Grotesk"],
-                        "body-md": ["Manrope"],
-                        "display-xl": ["Space Grotesk"],
-                        "body-lg": ["Manrope"],
-                        "headline-lg": ["Space Grotesk"],
-                        "label-caps": ["Inter"]
                     }
                 }
             }
         }
     </script>
-    <style>body { background-color: #050505; color: #e2e2e2; overflow-x: hidden; }
-        .glass-card {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(24px);
-            -webkit-backdrop-filter: blur(24px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            background-image: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 100%);
-        }
-        .neon-glow {
-            box-shadow: 0 0 15px rgba(0, 240, 255, 0.2);
-            border: 1px solid rgba(0, 240, 255, 0.5);
-        }
-        .text-glow {
-            text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
-        }
-        
-        /* Hiệu ứng mạng xã hội và Tooltip */
-        .neon-glow-hover {
-            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-        }
-        .neon-glow-hover:hover { 
-            box-shadow: 0 0 15px rgba(0, 240, 255, 0.4), inset 0 0 10px rgba(0, 240, 255, 0.1); 
-            border-color: rgba(0, 240, 255, 0.5); 
-            transform: scale(1.1); 
-        }
-        .tooltip-glass {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-        }
-        .social-tiktok { 
-            filter: drop-shadow(1.5px 1.5px 0px #FE2C55) drop-shadow(-1.5px -1.5px 0px #25F4EE); 
-        }
-        /* Phép thuật xử lý nền trắng chữ ký & Animation */
-        .signature-wrapper {
-            mix-blend-mode: screen; /* Giúp xoá hoàn toàn nền đen sau khi invert */
-            animation: reveal-signature 2.5s cubic-bezier(0.23, 1, 0.32, 1) forwards;
-            opacity: 0;
-            display: flex;
-            justify-content: center;
-        }
-        .signature-wrapper img {
-            filter: invert(1) drop-shadow(0 0 5px rgba(0, 240, 255, 0.6)); /* Đảo màu trắng/đen và thêm hào quang Cyan */
-            max-height: 100px;
-        }
-        @keyframes reveal-signature {
-            0% { clip-path: inset(0 100% 0 0); opacity: 0; } /* Bắt đầu ẩn hoàn toàn bên phải */
-            15% { opacity: 1; }
-            100% { clip-path: inset(0 0 0 0); opacity: 1; } /* Vuốt mở dần sang trái */
-        }
-        
-        /* Ultimate Birthday Rolling Animation Fix - Flexbox Override */
-        .rolling-wrapper {
-            display: inline-flex;
-            align-items: flex-start !important; /* Override the Tailwind items-center class */
-            height: 1.2em;
-            overflow: hidden;
-        }
-        .rolling-digit {
-            display: flex;
-            flex-direction: column;
-            align-self: flex-start; /* Guarantee the column starts exactly at the top edge */
-            animation: roll 2.5s cubic-bezier(0.23, 1, 0.32, 1) forwards;
-        }
-        .rolling-digit span {
-            height: 1.2em;
-            line-height: 1.2em;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-        /* Keep the slash separators vertically centered */
-        .rolling-wrapper > div:not(.rolling-digit) {
-            height: 1.2em;
-            display: flex;
-            align-items: center;
-        }
-        @keyframes roll {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(calc(-100% + 1.2em)); }
-        }</style>
+
+<style>
+/* ======================== BASE ======================== */
+*, *::before, *::after { box-sizing: border-box; }
+
+:root {
+  --cyan: #00f0ff;
+  --purple: #b600f8;
+  --white: #e2e2e2;
+  --bg: #050505;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    background-color: var(--bg);
+    color: var(--white);
+    overflow-x: hidden;
+    font-family: 'Space Grotesk', sans-serif;
+    cursor: none;
+}
+
+/* ======================== CUSTOM CURSOR ======================== */
+#cursor-dot {
+    position: fixed;
+    width: 8px; height: 8px;
+    background: var(--cyan);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: transform 0.05s, width 0.3s, height 0.3s, background 0.3s;
+    box-shadow: 0 0 10px var(--cyan), 0 0 20px var(--cyan);
+}
+#cursor-ring {
+    position: fixed;
+    width: 36px; height: 36px;
+    border: 1.5px solid rgba(0,240,255,0.5);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+    transition: transform 0.15s ease-out, width 0.4s, height 0.4s, border-color 0.4s;
+}
+#cursor-ring.hovering {
+    width: 60px; height: 60px;
+    border-color: var(--cyan);
+    background: rgba(0,240,255,0.05);
+}
+
+/* ======================== SCANLINES OVERLAY ======================== */
+#scanlines {
+    position: fixed;
+    inset: 0;
+    z-index: 9990;
+    pointer-events: none;
+    background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0,0,0,0.03) 2px,
+        rgba(0,0,0,0.03) 4px
+    );
+    animation: scanlines-move 8s linear infinite;
+}
+@keyframes scanlines-move {
+    0% { background-position: 0 0; }
+    100% { background-position: 0 100px; }
+}
+
+/* ======================== FILM GRAIN ======================== */
+#grain {
+    position: fixed;
+    inset: -50%;
+    width: 200%; height: 200%;
+    z-index: 9989;
+    pointer-events: none;
+    opacity: 0.035;
+    animation: grain-shift 0.12s steps(1) infinite;
+}
+@keyframes grain-shift {
+    0%,100% { transform: translate(0,0); }
+    10% { transform: translate(-2%,-3%); }
+    20% { transform: translate(3%,2%); }
+    30% { transform: translate(-1%,4%); }
+    40% { transform: translate(2%,-1%); }
+    50% { transform: translate(-4%,3%); }
+    60% { transform: translate(1%,-2%); }
+    70% { transform: translate(-3%,1%); }
+    80% { transform: translate(4%,-3%); }
+    90% { transform: translate(-2%,2%); }
+}
+
+/* ======================== VIGNETTE ======================== */
+#vignette {
+    position: fixed;
+    inset: 0;
+    z-index: 9988;
+    pointer-events: none;
+    background: radial-gradient(ellipse at 50% 50%, transparent 50%, rgba(0,0,0,0.7) 100%);
+}
+
+/* ======================== CINEMATIC BARS ======================== */
+.cinema-bar-top, .cinema-bar-bottom {
+    position: fixed;
+    left: 0; right: 0;
+    height: 0px;
+    background: #000;
+    z-index: 9987;
+    transition: height 0.8s cubic-bezier(0.23,1,0.32,1);
+}
+.cinema-bar-top { top: 0; }
+.cinema-bar-bottom { bottom: 0; }
+body.cinematic .cinema-bar-top,
+body.cinematic .cinema-bar-bottom { height: 48px; }
+
+/* ======================== PARTICLE CANVAS ======================== */
+#particle-canvas {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* ======================== AURORA BG ======================== */
+#aurora {
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    overflow: hidden;
+}
+.aurora-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    animation: aurora-drift 12s ease-in-out infinite alternate;
+    opacity: 0.12;
+}
+.aurora-blob:nth-child(1) {
+    width: 600px; height: 400px;
+    background: radial-gradient(circle, #00f0ff 0%, transparent 70%);
+    top: -10%; left: -10%;
+    animation-duration: 14s;
+}
+.aurora-blob:nth-child(2) {
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, #b600f8 0%, transparent 70%);
+    top: 20%; right: -15%;
+    animation-duration: 18s;
+    animation-delay: -4s;
+}
+.aurora-blob:nth-child(3) {
+    width: 400px; height: 600px;
+    background: radial-gradient(circle, #00f0ff 0%, transparent 70%);
+    bottom: -10%; left: 30%;
+    animation-duration: 16s;
+    animation-delay: -8s;
+}
+.aurora-blob:nth-child(4) {
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, #ebb2ff 0%, transparent 70%);
+    top: 50%; left: 10%;
+    animation-duration: 20s;
+    animation-delay: -2s;
+}
+@keyframes aurora-drift {
+    0% { transform: translate(0,0) scale(1); }
+    50% { transform: translate(40px, 30px) scale(1.1); }
+    100% { transform: translate(-30px, 50px) scale(0.95); }
+}
+
+/* ======================== MAIN CONTENT ======================== */
+main { position: relative; z-index: 10; }
+nav { position: relative; z-index: 100; }
+footer { position: relative; z-index: 10; }
+
+/* ======================== GLASS CARD ======================== */
+.glass-card {
+    background: rgba(255,255,255,0.03);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255,255,255,0.08);
+    background-image: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 100%);
+}
+
+/* ======================== NEON ======================== */
+.neon-glow {
+    box-shadow: 0 0 15px rgba(0,240,255,0.2);
+    border: 1px solid rgba(0,240,255,0.5);
+}
+.text-glow {
+    text-shadow: 0 0 10px rgba(0,240,255,0.5), 0 0 30px rgba(0,240,255,0.2);
+}
+.neon-glow-hover {
+    transition: all 0.5s cubic-bezier(0.23,1,0.32,1);
+}
+.neon-glow-hover:hover {
+    box-shadow: 0 0 20px rgba(0,240,255,0.5), inset 0 0 15px rgba(0,240,255,0.1);
+    border-color: rgba(0,240,255,0.6);
+    transform: scale(1.12);
+}
+
+/* ======================== GLITCH TEXT ======================== */
+.glitch {
+    position: relative;
+    display: inline-block;
+}
+.glitch::before, .glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: transparent;
+}
+.glitch::before {
+    color: #ff00ea;
+    animation: glitch-1 3.5s infinite;
+    clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
+    transform: translate(-2px, -2px);
+    opacity: 0;
+}
+.glitch::after {
+    color: #00f0ff;
+    animation: glitch-2 3.5s infinite;
+    clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%);
+    transform: translate(2px, 2px);
+    opacity: 0;
+}
+@keyframes glitch-1 {
+    0%,90%,100% { opacity: 0; transform: translate(-2px,-2px) skewX(0deg); }
+    91% { opacity: 0.8; transform: translate(-4px,-2px) skewX(-5deg); }
+    92% { opacity: 0; }
+    93% { opacity: 0.6; transform: translate(3px,1px) skewX(3deg); }
+    94%,95% { opacity: 0; }
+    96% { opacity: 0.7; transform: translate(-2px,-3px) skewX(-2deg); }
+    97% { opacity: 0; }
+}
+@keyframes glitch-2 {
+    0%,88%,100% { opacity: 0; transform: translate(2px,2px) skewX(0deg); }
+    89% { opacity: 0.7; transform: translate(4px,2px) skewX(4deg); }
+    90% { opacity: 0; }
+    91% { opacity: 0.5; transform: translate(-3px,-1px) skewX(-3deg); }
+    92%,94% { opacity: 0; }
+    95% { opacity: 0.6; transform: translate(2px,3px) skewX(2deg); }
+    96% { opacity: 0; }
+}
+
+/* ======================== HOLOGRAPHIC SHIMMER ======================== */
+.holo-shimmer {
+    position: relative;
+    overflow: hidden;
+}
+.holo-shimmer::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        105deg,
+        transparent 40%,
+        rgba(0,240,255,0.06) 50%,
+        rgba(182,0,248,0.04) 60%,
+        transparent 70%
+    );
+    background-size: 200% 100%;
+    animation: holo-sweep 4s ease-in-out infinite;
+    pointer-events: none;
+    border-radius: inherit;
+}
+@keyframes holo-sweep {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+/* ======================== SCROLL REVEAL ======================== */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.9s cubic-bezier(0.23,1,0.32,1), transform 0.9s cubic-bezier(0.23,1,0.32,1);
+}
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.reveal-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.9s cubic-bezier(0.23,1,0.32,1), transform 0.9s cubic-bezier(0.23,1,0.32,1);
+}
+.reveal-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+.reveal-scale {
+    opacity: 0;
+    transform: scale(0.85);
+    transition: opacity 0.9s cubic-bezier(0.23,1,0.32,1), transform 0.9s cubic-bezier(0.23,1,0.32,1);
+}
+.reveal-scale.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* ======================== 3D TILT CARD ======================== */
+.tilt-card {
+    transform-style: preserve-3d;
+    transition: transform 0.1s ease-out;
+}
+
+/* ======================== AVATAR PULSE ======================== */
+.avatar-wrapper {
+    position: relative;
+}
+.avatar-wrapper::before, .avatar-wrapper::after {
+    content: '';
+    position: absolute;
+    inset: -8px;
+    border-radius: 50%;
+    border: 1px solid rgba(0,240,255,0.3);
+    animation: avatar-pulse 3s ease-in-out infinite;
+}
+.avatar-wrapper::after {
+    inset: -18px;
+    animation-delay: 1s;
+    opacity: 0.5;
+}
+@keyframes avatar-pulse {
+    0%,100% { transform: scale(1); opacity: 0.4; }
+    50% { transform: scale(1.05); opacity: 0.8; }
+}
+
+/* ======================== TYPEWRITER ======================== */
+.typewriter {
+    overflow: hidden;
+    border-right: 2px solid var(--cyan);
+    white-space: nowrap;
+    animation: typing 2.5s steps(30, end) forwards, blink 0.75s step-end infinite;
+    width: 0;
+}
+.typewriter.done {
+    border-right: none;
+    animation: typing 2.5s steps(30, end) forwards;
+}
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+@keyframes blink {
+    from, to { border-color: transparent; }
+    50% { border-color: var(--cyan); }
+}
+
+/* ======================== TOOLTIP GLASS ======================== */
+.tooltip-glass {
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 8px 32px 0 rgba(0,0,0,0.37);
+}
+
+/* ======================== SOCIAL TIKTOK ======================== */
+.social-tiktok {
+    filter: drop-shadow(1.5px 1.5px 0px #FE2C55) drop-shadow(-1.5px -1.5px 0px #25F4EE);
+}
+
+/* ======================== ROLLING BIRTHDAY ======================== */
+.rolling-wrapper {
+    display: inline-flex;
+    align-items: flex-start !important;
+    height: 1.2em;
+    overflow: hidden;
+}
+.rolling-digit {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    animation: roll 2.5s cubic-bezier(0.23,1,0.32,1) forwards;
+}
+.rolling-digit span {
+    height: 1.2em;
+    line-height: 1.2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+.rolling-wrapper > div:not(.rolling-digit) {
+    height: 1.2em;
+    display: flex;
+    align-items: center;
+}
+@keyframes roll {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(calc(-100% + 1.2em)); }
+}
+
+/* ======================== SIGNATURE ======================== */
+.signature-wrapper {
+    mix-blend-mode: screen;
+    animation: reveal-signature 2.5s cubic-bezier(0.23,1,0.32,1) forwards;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+}
+.signature-wrapper img {
+    filter: invert(1) drop-shadow(0 0 5px rgba(0,240,255,0.6));
+    max-height: 100px;
+}
+@keyframes reveal-signature {
+    0% { clip-path: inset(0 100% 0 0); opacity: 0; }
+    15% { opacity: 1; }
+    100% { clip-path: inset(0 0 0 0); opacity: 1; }
+}
+
+/* ======================== HERO LINE SEPARATOR ======================== */
+.line-anim {
+    width: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+    animation: line-expand 1.5s cubic-bezier(0.23,1,0.32,1) 0.5s forwards;
+}
+@keyframes line-expand {
+    to { width: 100%; }
+}
+
+/* ======================== COUNTER BADGE ======================== */
+.stat-number {
+    background: linear-gradient(135deg, #00f0ff, #b600f8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ======================== NAV ======================== */
+nav {
+    background: rgba(0,0,0,0.2);
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    box-shadow: 0 8px 32px 0 rgba(0,0,0,0.8);
+}
+
+/* ======================== CARD HOVER GLOW ======================== */
+.card-hover-glow {
+    transition: all 0.6s cubic-bezier(0.23,1,0.32,1);
+}
+.card-hover-glow:hover {
+    transform: scale(1.03) translateY(-4px);
+    box-shadow: 0 20px 60px rgba(0,240,255,0.15);
+}
+
+/* ======================== PROGRESS RING ======================== */
+.progress-ring {
+    transform: rotate(-90deg);
+}
+.progress-ring circle {
+    transition: stroke-dashoffset 1.5s cubic-bezier(0.23,1,0.32,1);
+}
+
+/* ======================== FLOATING BADGE ======================== */
+.floating-badge {
+    animation: float 4s ease-in-out infinite;
+}
+@keyframes float {
+    0%,100% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+}
+
+/* ======================== SECTION TITLE ======================== */
+.section-title-line {
+    position: relative;
+}
+.section-title-line::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--cyan), var(--purple));
+    border-radius: 2px;
+    transition: width 1.2s cubic-bezier(0.23,1,0.32,1);
+    margin-top: 8px;
+}
+.section-title-line.visible::after {
+    width: 80px;
+}
+
+/* ======================== NOISE TEXTURE ======================== */
+#noise {
+    position: fixed;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    opacity: 0.025;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 200px 200px;
+}
+
+/* ======================== LIGHT STREAK ======================== */
+.light-streak {
+    position: fixed;
+    top: 0; left: -100%;
+    width: 60%; height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(0,240,255,0.4), transparent);
+    z-index: 9;
+    pointer-events: none;
+    animation: streak 8s ease-in-out infinite;
+}
+.light-streak:nth-child(2) {
+    top: 20%;
+    animation-delay: -3s;
+    animation-duration: 11s;
+    opacity: 0.4;
+}
+.light-streak:nth-child(3) {
+    top: 70%;
+    animation-delay: -6s;
+    animation-duration: 9s;
+    opacity: 0.3;
+}
+@keyframes streak {
+    0% { left: -100%; opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { left: 150%; opacity: 0; }
+}
+
+/* ======================== HERO ORBIT ======================== */
+.orbit-ring {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba(0,240,255,0.1);
+    animation: orbit-spin linear infinite;
+    pointer-events: none;
+}
+.orbit-ring::before {
+    content: '';
+    position: absolute;
+    width: 6px; height: 6px;
+    background: var(--cyan);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--cyan);
+    top: -3px; left: 50%;
+    transform: translateX(-50%);
+}
+.orbit-ring:nth-child(1) {
+    width: 380px; height: 380px;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    animation-duration: 12s;
+}
+.orbit-ring:nth-child(2) {
+    width: 460px; height: 460px;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    animation-duration: 20s;
+    animation-direction: reverse;
+    border-color: rgba(182,0,248,0.08);
+}
+.orbit-ring:nth-child(2)::before {
+    background: var(--purple);
+    box-shadow: 0 0 10px var(--purple);
+}
+@keyframes orbit-spin {
+    from { transform: translate(-50%,-50%) rotate(0deg); }
+    to { transform: translate(-50%,-50%) rotate(360deg); }
+}
+
+/* ======================== SCROLL INDICATOR ======================== */
+.scroll-indicator {
+    position: absolute;
+    bottom: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    animation: fade-in-up 1s ease 2s forwards;
+    opacity: 0;
+}
+.scroll-mouse {
+    width: 24px; height: 36px;
+    border: 2px solid rgba(0,240,255,0.4);
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    padding-top: 6px;
+}
+.scroll-wheel {
+    width: 4px; height: 8px;
+    background: var(--cyan);
+    border-radius: 2px;
+    animation: scroll-wheel 1.5s ease-in-out infinite;
+}
+@keyframes scroll-wheel {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(12px); opacity: 0; }
+}
+@keyframes fade-in-up {
+    to { opacity: 1; }
+}
+
+/* ======================== HERO SUBTITLE FADE ======================== */
+.hero-sub {
+    animation: hero-sub-in 1.2s cubic-bezier(0.23,1,0.32,1) 0.6s forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+@keyframes hero-sub-in {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ======================== HERO TITLE ======================== */
+.hero-title {
+    animation: hero-title-in 1.4s cubic-bezier(0.23,1,0.32,1) 0.2s forwards;
+    opacity: 0;
+    transform: translateY(30px);
+}
+@keyframes hero-title-in {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ======================== FLICKER ======================== */
+.flicker {
+    animation: flicker 6s linear infinite;
+}
+@keyframes flicker {
+    0%,19%,21%,23%,25%,54%,56%,100% { opacity:1; }
+    20%,24%,55% { opacity:0.6; }
+}
+
+/* ======================== DIVIDER GLOW ======================== */
+.divider-glow {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(0,240,255,0.3), transparent);
+    margin: 0 auto;
+}
+</style>
 </head>
+
 <body class="antialiased min-h-screen flex flex-col">
-<nav class="fixed top-0 w-full z-[100] bg-black/20 backdrop-blur-[40px] border-b border-white/5 shadow-[0_8px_32px_0_rgba(0,0,0,0.8)] hidden md:flex">
-<div class="flex justify-between items-center w-full px-8 md:px-16 py-6 max-w-[1200px] mx-auto">
-<div class="text-2xl font-bold tracking-tighter text-zinc-100 uppercase font-space-grotesk tracking-tight" style="">xuân phúc</div>
-<div class="flex items-center gap-8 font-space-grotesk tracking-tight">
-<a class="text-cyan-400 font-medium border-b border-cyan-400 pb-1" href="/" style="">Main</a>
-<a class="text-zinc-500 hover:text-zinc-200 transition-colors duration-500 hover:scale-105 hover:text-cyan-300" href="#" style="">Archive</a>
-<a class="text-zinc-500 hover:text-zinc-200 transition-colors duration-500 hover:scale-105 hover:text-cyan-300" href="#" style=""><br/></a>
-<a class="text-zinc-500 hover:text-zinc-200 transition-colors duration-500 hover:scale-105 hover:text-cyan-300" href="#" style=""><br/></a>
+
+<!-- OVERLAYS -->
+<div id="scanlines"></div>
+<div id="vignette"></div>
+<div id="noise"></div>
+<div class="cinema-bar-top"></div>
+<div class="cinema-bar-bottom"></div>
+
+<!-- LIGHT STREAKS -->
+<div class="light-streak"></div>
+<div class="light-streak"></div>
+<div class="light-streak"></div>
+
+<!-- CUSTOM CURSOR -->
+<div id="cursor-dot"></div>
+<div id="cursor-ring"></div>
+
+<!-- GRAIN CANVAS -->
+<canvas id="grain" style="position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:3;opacity:0.04;"></canvas>
+
+<!-- PARTICLE FIELD -->
+<canvas id="particle-canvas"></canvas>
+
+<!-- AURORA BG -->
+<div id="aurora">
+    <div class="aurora-blob"></div>
+    <div class="aurora-blob"></div>
+    <div class="aurora-blob"></div>
+    <div class="aurora-blob"></div>
 </div>
-<button class="bg-gradient-to-r from-primary-container to-secondary-container text-on-primary-fixed px-6 py-2 rounded-full font-headline-md text-sm shadow-[0_0_15px_rgba(0,240,255,0.3)] hover:scale-105 transition-transform duration-500" style="">Connect</button>
+
+<!-- NAV -->
+<nav class="fixed top-0 w-full z-[100] hidden md:flex">
+<div class="flex justify-between items-center w-full px-8 md:px-16 py-6 max-w-[1200px] mx-auto">
+    <div class="text-2xl font-bold tracking-tighter text-zinc-100 uppercase font-space-grotesk flicker">xuân phúc</div>
+    <div class="flex items-center gap-8 font-space-grotesk tracking-tight">
+        <a class="text-cyan-400 font-medium border-b border-cyan-400 pb-1" href="/">Main</a>
+        <a class="text-zinc-500 hover:text-zinc-200 transition-colors duration-500 hover:scale-105 hover:text-cyan-300" href="#">Archive</a>
+        <a class="text-zinc-500 hover:text-zinc-200 transition-colors duration-500" href="#"></a>
+        <a class="text-zinc-500 hover:text-zinc-200 transition-colors duration-500" href="#"></a>
+    </div>
+    <button class="bg-gradient-to-r from-cyan-400 to-purple-600 text-black px-6 py-2 rounded-full font-bold text-sm shadow-[0_0_20px_rgba(0,240,255,0.4)] hover:scale-105 hover:shadow-[0_0_30px_rgba(0,240,255,0.6)] transition-all duration-500">Connect</button>
 </div>
 </nav>
-<main class="flex-grow pt-[120px] pb-section-gap px-gutter max-w-container-max mx-auto w-full">
-<section class="flex flex-col items-center justify-center min-h-[716px] text-center mb-section-gap">
-<div class="relative w-64 h-64 md:w-80 md:h-80 aspect-square rounded-full neon-glow p-2 mb-12 hover:scale-105 transition-transform duration-700">
-<img alt="Portrait" class="w-full h-full object-cover rounded-full" src="avatar.png" style=""/>
-</div>
-<h1 class="text-[80px] font-bold font-display-xl text-on-surface mb-6 text-glow leading-none" style="">Xuân Phúc</h1>
-<div class="flex flex-col items-center justify-center mb-16">
-<div class="text-[12px] font-bold font-label-caps text-on-surface-variant tracking-[0.3em] uppercase mb-4" style="">MY BIRTHDAY</div>
-<div class="font-headline-md text-[36px] text-white text-glow flex items-center gap-[2px] rolling-wrapper">
-<div class="rolling-digit" style="animation-delay: 0.1s">
-<span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>0</span><span>1</span><span>2</span>
-</div>
-<div class="rolling-digit" style="animation-delay: 0.2s">
-<span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>0</span><span>1</span>
-</div>
-<div class="mx-3 text-white opacity-50">/</div>
-<div class="rolling-digit" style="animation-delay: 0.3s">
-<span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>0</span>
-</div>
-<div class="rolling-digit" style="animation-delay: 0.4s">
-<span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span>
-</div>
-<div class="mx-3 text-white opacity-50">/</div>
-<div class="rolling-digit" style="animation-delay: 0.5s">
-<span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>0</span><span>1</span><span>2</span>
-</div>
-<div class="rolling-digit" style="animation-delay: 0.6s">
-<span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>0</span>
-</div>
-<div class="rolling-digit" style="animation-delay: 0.7s">
-<span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>0</span><span>1</span>
-</div>
-<div class="rolling-digit" style="animation-delay: 0.8s">
-<span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>0</span><span>1</span><span>2</span>
-</div>
-</div>
-</div>
-<div class="glass-card px-8 py-4 rounded-full inline-flex items-center gap-3 mb-10 mt-12">
-<span class="material-symbols-outlined text-primary-container" style="">target</span>
-<span class="text-[12px] font-bold font-label-caps text-primary-container tracking-widest uppercase" style="">TARGET: NGUYEN QUANG DIEU MATH SPECIALIZED CLASS</span>
-</div>
-<div class="w-full mt-4">
-</div>
-</section>
-<section class="mb-section-gap flex justify-center">
-<div class="flex gap-6 md:gap-12 p-6 glass-card rounded-[32px]">
-<a class="w-16 h-16 rounded-full flex items-center justify-center bg-white/5 border border-transparent neon-glow-hover relative group" href="https://www.youtube.com/@XuanPhuc12345" style="" target="_blank">
-<svg height="28" viewbox="0 0 24 24" width="28" xmlns="http://www.w3.org/2000/svg">
-<path d="M21.582 6.186a2.784 2.784 0 00-1.957-1.96C17.896 3.75 12 3.75 12 3.75s-5.896 0-7.625.476a2.784 2.784 0 00-1.957 1.96C2 7.914 2 12 2 12s0 4.086.418 5.814a2.784 2.784 0 001.957 1.96C6.104 20.25 12 20.25 12 20.25s5.896 0 7.625-.476a2.784 2.784 0 001.957-1.96C22 16.086 22 12 22 12s0-4.086-.418-5.814z" fill="#FF0000"></path>
-<path d="M9.75 15.082v-6.164L15.113 12l-5.363 3.082z" fill="#FFFFFF"></path>
-</svg>
-</a>
-<a class="w-16 h-16 rounded-full flex items-center justify-center bg-white/5 border border-transparent neon-glow-hover relative group" href="https://www.tiktok.com/@xuanphuc2108" style="" target="_blank">
-<svg class="social-tiktok" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-<path d="M12.525.02c1.31-.02 2.61-.01 3.91-.01.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 2.23-.9 4.46-2.52 6.01-1.68 1.63-4.04 2.58-6.38 2.45-2.4-.1-4.73-1.28-6.23-3.13-1.45-1.78-2.1-4.14-1.83-6.41.27-2.3 1.5-4.43 3.38-5.74 1.83-1.3 4.17-1.84 6.4-1.47v4.06c-1.18-.3-2.45-.14-3.48.51-.97.59-1.66 1.61-1.84 2.75-.19 1.15.14 2.37.93 3.23.83.91 2.11 1.41 3.36 1.34 1.25-.04 2.44-.64 3.2-1.58.74-.91 1.1-2.12 1.08-3.32-.05-5.33-.03-10.66-.02-15.98h3.87z" fill="#FFFFFF"></path>
-</svg>
-</a>
-<div class="relative group z-50">
-<a class="w-16 h-16 rounded-full flex items-center justify-center bg-white/5 border border-transparent neon-glow-hover" href="tel:0783805117" style="">
-<span class="material-symbols-outlined text-3xl" style="color: rgb(52, 199, 89);">call</span>
-</a>
-<div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-4 px-4 py-2 rounded-lg tooltip-glass text-[14px] text-on-surface opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap tracking-widest font-mono" style="">
-                    0783805117
-                </div>
-</div>
-<div class="relative group z-50">
-<a class="w-16 h-16 rounded-full flex items-center justify-center bg-white/5 border border-transparent neon-glow-hover" href="mailto:nguyenxuanphucdongthap123@gmail.com" style="">
-<span class="material-symbols-outlined text-3xl" style="color: rgb(234, 67, 53);">mail</span>
-</a>
-<div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-4 px-4 py-2 rounded-lg tooltip-glass text-[14px] text-on-surface opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap tracking-widest font-mono" style="">
-                    nguyenxuanphucdongthap123@gmail.com
-                </div>
-</div>
-</div>
-</section>
-<section>
-<h2 class="text-[48px] font-bold font-headline-lg text-on-surface mb-16 flex items-center gap-4" style="">
-<span class="w-12 h-1 bg-primary-container rounded-full"></span>
+
+<!-- MAIN -->
+<main class="flex-grow pt-[120px] pb-[160px] px-8 max-w-[1200px] mx-auto w-full">
+
+    <!-- ===== HERO SECTION ===== -->
+    <section class="flex flex-col items-center justify-center min-h-[716px] text-center mb-[160px] relative">
+
+        <!-- Orbit rings around avatar -->
+        <div style="position:absolute;width:0;height:0;top:50%;left:50%;pointer-events:none;z-index:5;">
+            <div class="orbit-ring" style="top:-5%;"></div>
+            <div class="orbit-ring" style="top:-5%;"></div>
+        </div>
+
+        <!-- Avatar -->
+        <div class="avatar-wrapper relative w-64 h-64 md:w-80 md:h-80 aspect-square rounded-full neon-glow p-2 mb-12 hover:scale-105 transition-transform duration-700 reveal-scale tilt-card" style="z-index:10;">
+            <img alt="Portrait" class="w-full h-full object-cover rounded-full" src="avatar.png"/>
+        </div>
+
+        <!-- Title -->
+        <h1 class="text-[80px] font-bold font-display-xl text-on-surface mb-6 text-glow leading-none hero-title glitch" data-text="Xuân Phúc">Xuân Phúc</h1>
+
+        <!-- Animated line -->
+        <div class="line-anim mx-auto mb-8" style="max-width:300px;"></div>
+
+        <!-- Birthday -->
+        <div class="hero-sub flex flex-col items-center justify-center mb-16">
+            <div class="text-[12px] font-bold font-label-caps text-on-surface-variant tracking-[0.3em] uppercase mb-4">MY BIRTHDAY</div>
+            <div class="font-headline-md text-[36px] text-white text-glow flex items-center gap-[2px] rolling-wrapper">
+                <div class="rolling-digit" style="animation-delay:0.1s"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>0</span><span>1</span><span>2</span></div>
+                <div class="rolling-digit" style="animation-delay:0.2s"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>0</span><span>1</span></div>
+                <div class="mx-3 text-white opacity-50">/</div>
+                <div class="rolling-digit" style="animation-delay:0.3s"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>0</span></div>
+                <div class="rolling-digit" style="animation-delay:0.4s"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span></div>
+                <div class="mx-3 text-white opacity-50">/</div>
+                <div class="rolling-digit" style="animation-delay:0.5s"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>0</span><span>1</span><span>2</span></div>
+                <div class="rolling-digit" style="animation-delay:0.6s"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>0</span></div>
+                <div class="rolling-digit" style="animation-delay:0.7s"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>0</span><span>1</span></div>
+                <div class="rolling-digit" style="animation-delay:0.8s"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>0</span><span>1</span><span>2</span></div>
+            </div>
+        </div>
+
+        <!-- Target badge floating -->
+        <div class="glass-card px-8 py-4 rounded-full inline-flex items-center gap-3 mt-4 mb-6 floating-badge holo-shimmer reveal">
+            <span class="material-symbols-outlined text-primary-container">target</span>
+            <span class="text-[12px] font-bold font-label-caps text-primary-container tracking-widest uppercase">TARGET: NGUYEN QUANG DIEU MATH SPECIALIZED CLASS</span>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="scroll-indicator">
+            <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+            <span style="font-size:10px;letter-spacing:0.2em;color:rgba(255,255,255,0.3);text-transform:uppercase;">SCROLL</span>
+        </div>
+    </section>
+
+    <!-- ===== DIVIDER ===== -->
+    <div class="divider-glow mb-[80px] reveal" style="max-width:600px;"></div>
+
+    <!-- ===== SOCIAL SECTION ===== -->
+    <section class="mb-[160px] flex justify-center reveal">
+        <div class="flex gap-6 md:gap-12 p-6 glass-card rounded-[32px] holo-shimmer">
+
+            <a class="w-16 h-16 rounded-full flex items-center justify-center bg-white/5 border border-transparent neon-glow-hover relative group" href="https://www.youtube.com/@XuanPhuc12345" target="_blank">
+                <svg height="28" viewBox="0 0 24 24" width="28" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21.582 6.186a2.784 2.784 0 00-1.957-1.96C17.896 3.75 12 3.75 12 3.75s-5.896 0-7.625.476a2.784 2.784 0 00-1.957 1.96C2 7.914 2 12 2 12s0 4.086.418 5.814a2.784 2.784 0 001.957 1.96C6.104 20.25 12 20.25 12 20.25s5.896 0 7.625-.476a2.784 2.784 0 001.957-1.96C22 16.086 22 12 22 12s0-4.086-.418-5.814z" fill="#FF0000"/>
+                    <path d="M9.75 15.082v-6.164L15.113 12l-5.363 3.082z" fill="#FFFFFF"/>
+                </svg>
+            </a>
+
+            <a class="w-16 h-16 rounded-full flex items-center justify-center bg-white/5 border border-transparent neon-glow-hover relative group" href="https://www.tiktok.com/@xuanphuc2108" target="_blank">
+                <svg class="social-tiktok" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.01.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 2.23-.9 4.46-2.52 6.01-1.68 1.63-4.04 2.58-6.38 2.45-2.4-.1-4.73-1.28-6.23-3.13-1.45-1.78-2.1-4.14-1.83-6.41.27-2.3 1.5-4.43 3.38-5.74 1.83-1.3 4.17-1.84 6.4-1.47v4.06c-1.18-.3-2.45-.14-3.48.51-.97.59-1.66 1.61-1.84 2.75-.19 1.15.14 2.37.93 3.23.83.91 2.11 1.41 3.36 1.34 1.25-.04 2.44-.64 3.2-1.58.74-.91 1.1-2.12 1.08-3.32-.05-5.33-.03-10.66-.02-15.98h3.87z" fill="#FFFFFF"/>
+                </svg>
+            </a>
+
+            <div class="relative group z-50">
+                <a class="w-16 h-16 rounded-full flex items-center justify-center bg-white/5 border border-transparent neon-glow-hover" href="tel:0783805117">
+                    <span class="material-symbols-outlined text-3xl" style="color:rgb(52,199,89);">call</span>
+                </a>
+                <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-4 px-4 py-2 rounded-lg tooltip-glass text-[14px] text-on-surface opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap tracking-widest font-mono">0783805117</div>
+            </div>
+
+            <div class="relative group z-50">
+                <a class="w-16 h-16 rounded-full flex items-center justify-center bg-white/5 border border-transparent neon-glow-hover" href="mailto:nguyenxuanphucdongthap123@gmail.com">
+                    <span class="material-symbols-outlined text-3xl" style="color:rgb(234,67,53);">mail</span>
+                </a>
+                <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-4 px-4 py-2 rounded-lg tooltip-glass text-[14px] text-on-surface opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap tracking-widest font-mono">nguyenxuanphucdongthap123@gmail.com</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CREATIVE SPACE ===== -->
+    <section>
+        <h2 class="text-[48px] font-bold font-headline-lg text-on-surface mb-16 flex items-center gap-4 reveal-left section-title-line">
+            <span class="w-12 h-1 bg-primary-container rounded-full"></span>
             My Creative Space
         </h2>
-<div class="flex flex-col gap-12">
-<div class="relative w-full aspect-video group hover:scale-105 transition-transform duration-700 before:absolute before:-inset-8 before:z-[-1] before:bg-[image:var(--bg-img)] before:bg-cover before:bg-center before:blur-[60px] before:opacity-30 group-hover:before:opacity-50 before:transition-opacity before:duration-700 before:rounded-3xl" style="--bg-img: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCE3wE_Wu_kaLxBxnvrATbIweomL2LlUqfy1LV-XcfBLNUkZHDXp5HpYOweCz4HxWRrZ84tQbD05LIfGCMcnFuZVJOAR_z4COt4X6FItzmb3mZBEcvQ2pnu-QPsV3Q6EInuJf2YCdBFxKfe_Qvo1eDnYFKypXss00LzDgtvJoMgkiEuOFd6wjteHVxha3Iwx3EMJCb8dP9kjZxJquaIKdRxY7qOnQgsEJImyBmReSnw0ICOnjKqet4OqMQOHcXcDrz8_-X3jFYzDpE');">
-<div class="w-full h-full glass-card rounded-3xl overflow-hidden relative !border-red-500/30 shadow-[0_0_30px_rgba(239,68,68,0.2)]">
-<img alt="Abstract" class="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-overlay" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCE3wE_Wu_kaLxBxnvrATbIweomL2LlUqfy1LV-XcfBLNUkZHDXp5HpYOweCz4HxWRrZ84tQbD05LIfGCMcnFuZVJOAR_z4COt4X6FItzmb3mZBEcvQ2pnu-QPsV3Q6EInuJf2YCdBFxKfe_Qvo1eDnYFKypXss00LzDgtvJoMgkiEuOFd6wjteHVxha3Iwx3EMJCb8dP9kjZxJquaIKdRxY7qOnQgsEJImyBmReSnw0ICOnjKqet4OqMQOHcXcDrz8_-X3jFYzDpE" style=""/>
-<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
-<div class="absolute inset-0 p-8 flex flex-col justify-between z-20">
-<div></div>
-<div class="flex justify-between items-end w-full">
-<div>
-<span class="inline-block px-3 py-1 rounded-full bg-white/10 backdrop-blur-sm border border-white/5 text-[12px] font-bold font-label-caps text-on-surface mb-3 tracking-widest uppercase" style="">ALBUM</span>
-<h3 class="text-[32px] font-medium font-headline-md text-on-surface" style="">My Photos</h3>
-</div>
-</div>
-</div>
-</div>
-</div>
 
-<a class="relative w-full aspect-video group hover:scale-105 transition-transform duration-700 before:absolute before:-inset-8 before:z-[-1] before:bg-[image:var(--bg-img)] before:bg-cover before:bg-center before:blur-[60px] before:opacity-30 group-hover:before:opacity-50 before:transition-opacity before:duration-700 before:rounded-3xl block" href="/video" style="--bg-img: url('https://lh3.googleusercontent.com/aida/ADBb0uhoLgh5ahFR6Vpe6SZmGlcqCV1-VlXoswxEpPWqAUrdKJRAjHqH0iqwvWOAPnVTPpVjWPd8Y9wtSQvq74kS63l3w4ViaOLx8dCQn0zxuM0tP36F3Dg31w7cWTLlU3rf-jjISmIdbf9ij3S-iRPKIVLkHEXGNdATZRo_V1wOERAZ1ZS1EapS3A1SM75f0rd-A8_kKrOOsxYfTWFyGp4WF3lP3j7PF37mgeA4Wjusyrs-z7MH8QLhuqoDRMNUDLkC8sALFgKUCDgluw');">
-<div class="w-full h-full glass-card rounded-3xl overflow-hidden relative !border-emerald-500/30 shadow-[0_0_30px_rgba(16,185,129,0.2)]">
-<img alt="Process" class="absolute inset-0 w-full h-full object-cover opacity-50 mix-blend-overlay" src="dadang.jpg" style=""/>
-<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
-<div class="absolute inset-0 p-8 flex flex-col justify-between z-20">
-<div></div>
-<div class="flex justify-between items-end w-full">
-<div>
-<span class="inline-block px-3 py-1 rounded-full bg-white/10 backdrop-blur-sm border border-white/5 text-[12px] font-bold font-label-caps text-on-surface mb-3 tracking-widest uppercase" style="">VIDEOS</span>
-<h3 class="text-[32px] font-medium font-headline-md text-on-surface" style="">My Video Content</h3>
-</div>
-<div class="w-16 h-16 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center hover:scale-110 hover:bg-white/20 transition-all duration-500 cursor-pointer">
-<span class="material-symbols-outlined text-3xl text-on-surface pl-1" style='font-variation-settings: "FILL" 1;'>play_arrow</span>
-</div>
-</div>
-</div>
-</div>
-</a>
+        <div class="flex flex-col gap-12">
+            <!-- Photo Album -->
+            <div class="relative w-full aspect-video group card-hover-glow tilt-card reveal
+                before:absolute before:-inset-8 before:z-[-1]
+                before:bg-[image:var(--bg-img)] before:bg-cover before:bg-center
+                before:blur-[60px] before:opacity-30 group-hover:before:opacity-60
+                before:transition-opacity before:duration-700 before:rounded-3xl"
+                style="--bg-img: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCE3wE_Wu_kaLxBxnvrATbIweomL2LlUqfy1LV-XcfBLNUkZHDXp5HpYOweCz4HxWRrZ84tQbD05LIfGCMcnFuZVJOAR_z4COt4X6FItzmb3mZBEcvQ2pnu-QPsV3Q6EInuJf2YCdBFxKfe_Qvo1eDnYFKypXss00LzDgtvJoMgkiEuOFd6wjteHVxha3Iwx3EMJCb8dP9kjZxJquaIKdRxY7qOnQgsEJImyBmReSnw0ICOnjKqet4OqMQOHcXcDrz8_-X3jFYzDpE');">
+                <div class="w-full h-full glass-card rounded-3xl overflow-hidden relative !border-red-500/30 shadow-[0_0_30px_rgba(239,68,68,0.2)] holo-shimmer">
+                    <img alt="Abstract" class="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-overlay"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCE3wE_Wu_kaLxBxnvrATbIweomL2LlUqfy1LV-XcfBLNUkZHDXp5HpYOweCz4HxWRrZ84tQbD05LIfGCMcnFuZVJOAR_z4COt4X6FItzmb3mZBEcvQ2pnu-QPsV3Q6EInuJf2YCdBFxKfe_Qvo1eDnYFKypXss00LzDgtvJoMgkiEuOFd6wjteHVxha3Iwx3EMJCb8dP9kjZxJquaIKdRxY7qOnQgsEJImyBmReSnw0ICOnjKqet4OqMQOHcXcDrz8_-X3jFYzDpE"/>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+                    <!-- Horizontal scanline on hover -->
+                    <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                        style="background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(239,68,68,0.03) 3px,rgba(239,68,68,0.03) 4px);"></div>
+                    <div class="absolute inset-0 p-8 flex flex-col justify-between z-20">
+                        <div></div>
+                        <div class="flex justify-between items-end w-full">
+                            <div>
+                                <span class="inline-block px-3 py-1 rounded-full bg-white/10 backdrop-blur-sm border border-white/5 text-[12px] font-bold font-label-caps text-on-surface mb-3 tracking-widest uppercase">ALBUM</span>
+                                <h3 class="text-[32px] font-medium font-headline-md text-on-surface">My Photos</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-</div>
-</section>
+            <!-- Video Content -->
+            <a class="relative w-full aspect-video group card-hover-glow tilt-card reveal block
+                before:absolute before:-inset-8 before:z-[-1]
+                before:bg-[image:var(--bg-img)] before:bg-cover before:bg-center
+                before:blur-[60px] before:opacity-30 group-hover:before:opacity-60
+                before:transition-opacity before:duration-700 before:rounded-3xl"
+                href="/video"
+                style="--bg-img: url('https://lh3.googleusercontent.com/aida/ADBb0uhoLgh5ahFR6Vpe6SZmGlcqCV1-VlXoswxEpPWqAUrdKJRAjHqH0iqwvWOAPnVTPpVjWPd8Y9wtSQvq74kS63l3w4ViaOLx8dCQn0zxuM0tP36F3Dg31w7cWTLlU3rf-jjISmIdbf9ij3S-iRPKIVLkHEXGNdATZRo_V1wOERAZ1ZS1EapS3A1SM75f0rd-A8_kKrOOsxYfTWFyGp4WF3lP3j7PF37mgeA4Wjusyrs-z7MH8QLhuqoDRMNUDLkC8sALFgKUCDgluw');">
+                <div class="w-full h-full glass-card rounded-3xl overflow-hidden relative !border-emerald-500/30 shadow-[0_0_30px_rgba(16,185,129,0.2)] holo-shimmer">
+                    <img alt="Process" class="absolute inset-0 w-full h-full object-cover opacity-50 mix-blend-overlay" src="dadang.jpg"/>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+                    <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                        style="background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(16,185,129,0.03) 3px,rgba(16,185,129,0.03) 4px);"></div>
+                    <div class="absolute inset-0 p-8 flex flex-col justify-between z-20">
+                        <div></div>
+                        <div class="flex justify-between items-end w-full">
+                            <div>
+                                <span class="inline-block px-3 py-1 rounded-full bg-white/10 backdrop-blur-sm border border-white/5 text-[12px] font-bold font-label-caps text-on-surface mb-3 tracking-widest uppercase">VIDEOS</span>
+                                <h3 class="text-[32px] font-medium font-headline-md text-on-surface">My Video Content</h3>
+                            </div>
+                            <div class="w-16 h-16 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center hover:scale-110 hover:bg-white/20 transition-all duration-500 cursor-pointer neon-glow-hover">
+                                <span class="material-symbols-outlined text-3xl text-on-surface pl-1" style='font-variation-settings:"FILL" 1;'>play_arrow</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
 </main>
-<footer class="w-full py-24 bg-transparent border-t border-white/5">
-<div class="max-w-7xl mx-auto px-12 flex flex-col md:flex-row justify-between items-center gap-8">
-<div class="text-zinc-100 font-black font-space-grotesk text-[10px] tracking-widest uppercase" style="">
+
+<!-- FOOTER -->
+<footer class="w-full py-24 bg-transparent border-t border-white/5 relative z-10">
+    <div class="max-w-7xl mx-auto px-12 flex flex-col md:flex-row justify-between items-center gap-8">
+        <div class="text-zinc-100 font-black font-space-grotesk text-[10px] tracking-widest uppercase">
             © 2026 ARCHIVE. ALL RIGHTS RESERVED.
         </div>
-<div class="flex items-center gap-6 font-space-grotesk text-[10px] tracking-widest uppercase opacity-80 hover:opacity-100 duration-500">
-<a class="text-zinc-600 hover:text-cyan-400 transition-all duration-500" href="#" style="">Privacy</a>
-<a class="text-zinc-600 hover:text-cyan-400 transition-all duration-500" href="#" style="">Terms</a>
-<a class="text-zinc-600 hover:text-cyan-400 transition-all duration-500" href="#" style="">Protocol</a>
-</div>
-</div>
+        <div class="flex items-center gap-6 font-space-grotesk text-[10px] tracking-widest uppercase opacity-80 hover:opacity-100 duration-500">
+            <a class="text-zinc-600 hover:text-cyan-400 transition-all duration-500" href="#">Privacy</a>
+            <a class="text-zinc-600 hover:text-cyan-400 transition-all duration-500" href="#">Terms</a>
+            <a class="text-zinc-600 hover:text-cyan-400 transition-all duration-500" href="#">Protocol</a>
+        </div>
+    </div>
 </footer>
+
 <script>
-  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+/* ============ CUSTOM CURSOR ============ */
+const dot = document.getElementById('cursor-dot');
+const ring = document.getElementById('cursor-ring');
+let mx = 0, my = 0, rx = 0, ry = 0;
+
+document.addEventListener('mousemove', e => {
+    mx = e.clientX; my = e.clientY;
+    dot.style.left = mx + 'px';
+    dot.style.top = my + 'px';
+});
+
+(function animateCursor() {
+    rx += (mx - rx) * 0.12;
+    ry += (my - ry) * 0.12;
+    ring.style.left = rx + 'px';
+    ring.style.top = ry + 'px';
+    requestAnimationFrame(animateCursor);
+})();
+
+document.querySelectorAll('a, button, .neon-glow-hover, .tilt-card').forEach(el => {
+    el.addEventListener('mouseenter', () => ring.classList.add('hovering'));
+    el.addEventListener('mouseleave', () => ring.classList.remove('hovering'));
+});
+
+/* ============ GRAIN CANVAS ============ */
+const grainCanvas = document.getElementById('grain');
+const gCtx = grainCanvas.getContext('2d');
+function resizeGrain() {
+    grainCanvas.width = window.innerWidth;
+    grainCanvas.height = window.innerHeight;
+}
+resizeGrain();
+window.addEventListener('resize', resizeGrain);
+function drawGrain() {
+    const imageData = gCtx.createImageData(grainCanvas.width, grainCanvas.height);
+    const data = imageData.data;
+    for (let i = 0; i < data.length; i += 4) {
+        const v = Math.random() * 255;
+        data[i] = data[i+1] = data[i+2] = v;
+        data[i+3] = Math.random() * 20;
+    }
+    gCtx.putImageData(imageData, 0, 0);
+    requestAnimationFrame(drawGrain);
+}
+drawGrain();
+
+/* ============ PARTICLE FIELD ============ */
+const canvas = document.getElementById('particle-canvas');
+const ctx = canvas.getContext('2d');
+let W, H, particles = [], mouse = { x: -999, y: -999 };
+
+function resizeCanvas() {
+    W = canvas.width = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+}
+resizeCanvas();
+window.addEventListener('resize', resizeCanvas);
+
+document.addEventListener('mousemove', e => { mouse.x = e.clientX; mouse.y = e.clientY; });
+
+class Particle {
+    constructor() { this.reset(); }
+    reset() {
+        this.x = Math.random() * W;
+        this.y = Math.random() * H;
+        this.vx = (Math.random() - 0.5) * 0.3;
+        this.vy = (Math.random() - 0.5) * 0.3;
+        this.r = Math.random() * 1.5 + 0.3;
+        this.alpha = Math.random() * 0.5 + 0.1;
+        this.color = Math.random() > 0.7 ? '#00f0ff' : Math.random() > 0.5 ? '#b600f8' : '#ffffff';
+        this.life = 1;
+    }
+    update() {
+        const dx = mouse.x - this.x, dy = mouse.y - this.y;
+        const dist = Math.sqrt(dx*dx + dy*dy);
+        if (dist < 120) {
+            this.vx -= dx / dist * 0.5;
+            this.vy -= dy / dist * 0.5;
+        }
+        this.vx *= 0.99; this.vy *= 0.99;
+        this.x += this.vx; this.y += this.vy;
+        if (this.x < 0 || this.x > W || this.y < 0 || this.y > H) this.reset();
+    }
+    draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+        ctx.fillStyle = this.color;
+        ctx.globalAlpha = this.alpha;
+        ctx.fill();
+    }
+}
+
+for (let i = 0; i < 180; i++) particles.push(new Particle());
+
+function connectParticles() {
+    for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+            const dx = particles[i].x - particles[j].x;
+            const dy = particles[i].y - particles[j].y;
+            const d = Math.sqrt(dx*dx + dy*dy);
+            if (d < 100) {
+                ctx.beginPath();
+                ctx.moveTo(particles[i].x, particles[i].y);
+                ctx.lineTo(particles[j].x, particles[j].y);
+                ctx.strokeStyle = '#00f0ff';
+                ctx.globalAlpha = (1 - d/100) * 0.08;
+                ctx.lineWidth = 0.5;
+                ctx.stroke();
+            }
+        }
+    }
+}
+
+function animateParticles() {
+    ctx.clearRect(0, 0, W, H);
+    particles.forEach(p => { p.update(); p.draw(); });
+    connectParticles();
+    ctx.globalAlpha = 1;
+    requestAnimationFrame(animateParticles);
+}
+animateParticles();
+
+/* ============ SCROLL REVEAL ============ */
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+        if (e.isIntersecting) {
+            e.target.classList.add('visible');
+        }
+    });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.reveal, .reveal-left, .reveal-scale, .section-title-line').forEach(el => {
+    observer.observe(el);
+});
+
+/* ============ 3D TILT CARD ============ */
+document.querySelectorAll('.tilt-card').forEach(card => {
+    card.addEventListener('mousemove', e => {
+        const rect = card.getBoundingClientRect();
+        const cx = rect.left + rect.width / 2;
+        const cy = rect.top + rect.height / 2;
+        const rx2 = (e.clientY - cy) / (rect.height / 2) * -8;
+        const ry2 = (e.clientX - cx) / (rect.width / 2) * 8;
+        card.style.transform = `perspective(800px) rotateX(${rx2}deg) rotateY(${ry2}deg) scale(1.02)`;
+    });
+    card.addEventListener('mouseleave', () => {
+        card.style.transform = 'perspective(800px) rotateX(0) rotateY(0) scale(1)';
+        card.style.transition = 'transform 0.6s cubic-bezier(0.23,1,0.32,1)';
+    });
+    card.addEventListener('mouseenter', () => {
+        card.style.transition = 'transform 0.1s ease-out';
+    });
+});
+
+/* ============ CINEMATIC BARS ============ */
+// Activate briefly on load for cinematic intro
+document.body.classList.add('cinematic');
+setTimeout(() => document.body.classList.remove('cinematic'), 2000);
+
+/* ============ CURSOR TRAIL ============ */
+const trailCount = 12;
+const trail = [];
+for (let i = 0; i < trailCount; i++) {
+    const el = document.createElement('div');
+    el.style.cssText = `
+        position: fixed;
+        width: ${4 - i * 0.2}px;
+        height: ${4 - i * 0.2}px;
+        background: rgba(0,240,255,${0.4 - i * 0.03});
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 9997;
+        transform: translate(-50%,-50%);
+        transition: transform 0.05s;
+    `;
+    document.body.appendChild(el);
+    trail.push({ el, x: 0, y: 0 });
+}
+
+let trailPositions = Array(trailCount).fill({ x: 0, y: 0 });
+document.addEventListener('mousemove', e => {
+    trailPositions[0] = { x: e.clientX, y: e.clientY };
+});
+(function animateTrail() {
+    for (let i = trailCount - 1; i > 0; i--) {
+        trailPositions[i] = {
+            x: trailPositions[i].x + (trailPositions[i-1].x - trailPositions[i].x) * 0.35,
+            y: trailPositions[i].y + (trailPositions[i-1].y - trailPositions[i].y) * 0.35,
+        };
+        trail[i].el.style.left = trailPositions[i].x + 'px';
+        trail[i].el.style.top = trailPositions[i].y + 'px';
+    }
+    requestAnimationFrame(animateTrail);
+})();
+
+/* ============ PARALLAX AURORA ============ */
+window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    const blobs = document.querySelectorAll('.aurora-blob');
+    blobs.forEach((b, i) => {
+        const speed = 0.05 + i * 0.02;
+        b.style.transform = `translateY(${y * speed}px)`;
+    });
+});
 </script>
-<script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>
